@@ -43,7 +43,7 @@
 <aside class="left-sidebar">
     <div class="scroll-sidebar">
         <nav class="sidebar-nav">
-            <?php if ($this->session->userdata('user_details')[0]['user_type'] != "") { ?>
+            <?php if ($this->session->userdata('user_details')[0]['user_type'] != "User") { ?>
                 <ul id="sidebarnav">
                     <li class="<?php if (!empty($pagename)) {
                                     echo "active";
@@ -51,7 +51,7 @@
                                     echo "not-active";
                                 }  ?>">
                         <a class="waves-effect " href="<?= base_url("dashboard") ?>" aria-expanded="false"><i class="icon-Car-Wheel"></i><span class="hide-menu">Dashboard </span></a>
-                    <li> <a class="waves-effect " href="<?= base_url("") ?>" aria-expanded="false"><i class="icon-File"></i><span class="hide-menu">Sample Page 1</span></a></li>
+                    <li> <a class="waves-effect " href="<?= base_url("training_materials") ?>" aria-expanded="false"><i class="icon-File"></i><span class="hide-menu">Training Materials</span></a></li>
                     <li> <a class="waves-effect " href="<?= base_url("") ?>" aria-expanded="false"><i class="icon-File"></i><span class="hide-menu">Sample Page 2</span></a></li>
                     </li>
                 </ul>

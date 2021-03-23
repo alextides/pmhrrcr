@@ -871,7 +871,7 @@ sidebar navigation
         background: #10359A;
         }
         .scroll-sidebar.ps-container.ps-theme-default {
-        background: #071845; }
+        background: linear-gradient(270deg, #1deef7 5%, #10359A 90%) }
         #sidebarnav {
         background: #071845; }
         .sidebar-nav ul li a.active, .sidebar-nav ul li a:hover {

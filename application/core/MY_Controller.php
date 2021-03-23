@@ -5,7 +5,7 @@ class MY_Controller extends MX_Controller {
 
 	public function __construct(){
 		$route = $this->router->fetch_class();
-		// 		if($route == 'login'){
+		// if($route == 'login'){
 		// 	if($this->session->has_userdata('logged_in')){
 		// 		redirect(base_url());
 		// 	}

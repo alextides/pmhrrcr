@@ -11,4 +11,34 @@ class Login extends MY_Controller {
 		$data["title"] = "Login Account";
 		$this->load_login_page("index", $data);
 	}
+
+	public function login_account()
+	{
+		$this->input->post();
+		$username = $this->input->post("username");
+		$password = $this->input->post("password");
+		if (empty($username) || empty($password)) {
+			$this->session->set_flashdata('log_err', 'Please input the required fields!');
+			redirect(base_url("login"));
+		} else {
+			$params["select"] = "*";
+			$params["where"] = array("username" => $username);
+			$params["join"] = array("bpmhsl_user_details" => "bpmhsl_users.user_id = bpmhsl_user_details.fk_user_id");
+			$user_data = $this->MY_Model->getRows("bpmhsl_users", $params);
+			// echo '<pre>';
+			// print_r($res);
+			//  exit;
+			if (empty($user_data)) {
+				$this->session->set_flashdata('log_err', 'User does not exist');
+				redirect(base_url("login"));
+			} else if (!password_verify($password, $user_data[0]['password'])) {
+				$this->session->set_flashdata('log_err', 'Incorrect Password');
+				redirect(base_url("login"));
+			} else {
+				$this->session->set_userdata('user_details', $user_data);
+				$redirect = ($user_data[0]['user_type'] != 'User') ? base_url('dashboard') : base_url('books');
+				redirect($redirect);
+			}
+		}
+	}
 }

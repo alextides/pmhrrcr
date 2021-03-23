@@ -29,7 +29,7 @@ Login register and recover password Page
   position: fixed; }
 
   .card-body{
-      background-color: #f2f2f2;
+      /* background-color: #f2f2f2; */
   }
 
   button.btn.btn-block.btn-lg.btn-info.btn-rounded{
@@ -63,8 +63,9 @@ Login register and recover password Page
       /* max-width: 20% !important; */
       /* margin: 0; */
       /* display: block; */
-      margin-left: auto;
-      margin-right: auto;
+      /* margin-left: auto;
+      margin-right: auto; */
+      margin: 17px 0 0 0;
       /* width: 11%; */
     }
 
@@ -93,7 +94,7 @@ input.form-control.valid {
 }
 
 .login-btn {
-	background: #10359A;
+	background: linear-gradient(270deg, #10359A 10%, #1deef7 98%);
 	color: #fff;
 	padding: 19px;
 	border: 1px;
