@@ -36,9 +36,10 @@ class Login extends MY_Controller {
 				redirect(base_url("login"));
 			} else {
 				$this->session->set_userdata('user_details', $user_data);
-				$redirect = ($user_data[0]['user_type'] != 'User') ? base_url('dashboard') : base_url('books');
+				$redirect = ($user_data[0]['user_type'] != 'User') ? base_url('dashboard') : base_url('users');
 				redirect($redirect);
 			}
 		}
 	}
+
 }

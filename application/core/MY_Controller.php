@@ -60,4 +60,5 @@ class MY_Controller extends MX_Controller {
 		$load = array('icon' => $icon, 'content' => $msg);
 		$this->session->set_flashdata('swals', $load);
 	}
+
 }

@@ -39,12 +39,17 @@
                     </div>
                     <div class="form-group ">
                         <div class="col-xs-12">
-                            <input class="login-input" type="text" required="" name="username" placeholder="Unter Username">
+                            <input class="login-input" type="text" required="" name="username" placeholder="Enter Username">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-xs-12">
                             <input class="login-input" type="password" required="" name="password" placeholder="Enter Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <center><a href="<?php echo base_url('register')?>">Register Account</a></center>
                         </div>
                     </div>
                     <div class="form-group text-center ">
