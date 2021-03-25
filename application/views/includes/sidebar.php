@@ -51,8 +51,8 @@
                                     echo "not-active";
                                 }  ?>">
                         <a class="waves-effect " href="<?= base_url("dashboard") ?>" aria-expanded="false"><i class="icon-Car-Wheel"></i><span class="hide-menu">Dashboard </span></a>
+                        <li> <a class="waves-effect " href="<?= base_url("userlist") ?>" aria-expanded="false"><i class="icon-File"></i><span class="hide-menu">Manage Users</span></a></li>
                     <li> <a class="waves-effect " href="<?= base_url("training_materials") ?>" aria-expanded="false"><i class="icon-File"></i><span class="hide-menu">Training Materials</span></a></li>
-                    <li> <a class="waves-effect " href="<?= base_url("") ?>" aria-expanded="false"><i class="icon-File"></i><span class="hide-menu">Sample Page 2</span></a></li>
                     </li>
                 </ul>
             <?php } else { ?>
@@ -63,8 +63,8 @@
                                     echo "not-active";
                                 }  ?>">
                         <a class="waves-effect " href="<?= base_url("dashboard") ?>" aria-expanded="false"><i class="icon-Car-Wheel"></i><span class="hide-menu">Dashboard </span></a>
-                    <li> <a class="waves-effect " href="<?= base_url("") ?>" aria-expanded="false"><i class="icon-File"></i><span class="hide-menu">Sample Page 1</span></a></li>
-                    <li> <a class="waves-effect " href="<?= base_url("") ?>" aria-expanded="false"><i class="icon-File"></i><span class="hide-menu">Sample Page 2</span></a></li>
+                    <li> <a class="waves-effect " href="<?= base_url("") ?>" aria-expanded="false"><i class="icon-File"></i><span class="hide-menu">Books</span></a></li>
+                    <li> <a class="waves-effect " href="<?= base_url("") ?>" aria-expanded="false"><i class="icon-File"></i><span class="hide-menu">Training Materials</span></a></li>
                     </li>
                 </ul>
             <?php } ?>

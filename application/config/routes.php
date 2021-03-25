@@ -54,5 +54,5 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['employee/downloads/(:any)'] = "employee/downloads/$1";
 $route['register'] = "register/register";
-$route['user'] = "user/users";
+$route['user'] = "users/users";
 
