@@ -9,6 +9,7 @@
                 </span>
             </a>
         </div>
+        
         <div class="navbar-collapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="sl-icon-menu"></i></a> </li>
@@ -16,7 +17,7 @@
             </ul>
             <ul class="navbar-nav my-lg-0">
                 <li class="nav-item dropdown u-pro">
-                    <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hi, Name Here<span class="hidden-md-down"> &nbsp;<i class="fa fa-angle-down"></i></span> </a>
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hi, <?php echo $this->session->userdata('user_details')[0]['username']; ?><span class="hidden-md-down"> &nbsp;<i class="fa fa-angle-down"></i></span> </a>
                     <div class="dropdown-menu dropdown-menu-right animated flipInY">
                         <ul class="dropdown-user">
                             <?php if ($this->session->userdata('user_details')[0]['user_type'] != "user") { ?>

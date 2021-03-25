@@ -25,9 +25,7 @@ class Login extends MY_Controller {
 			$params["where"] = array("username" => $username);
 			$params["join"] = array("bpmhsl_user_details" => "bpmhsl_users.user_id = bpmhsl_user_details.fk_user_id");
 			$user_data = $this->MY_Model->getRows("bpmhsl_users", $params);
-			// echo '<pre>';
-			// print_r($res);
-			//  exit;
+
 			if (empty($user_data)) {
 				$this->session->set_flashdata('log_err', 'User does not exist');
 				redirect(base_url("login"));

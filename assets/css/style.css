@@ -868,10 +868,11 @@ sidebar navigation
         font-size: 15px;
         font-weight: 400; }
         .navbar-collapse {
-        background: #10359A;
+        background: linear-gradient(to right, #0a205c, #10359A);
         }
         .scroll-sidebar.ps-container.ps-theme-default {
-        background: linear-gradient(270deg, #1deef7 5%, #10359A 90%) }
+        /* background: linear-gradient(270deg, #1deef7 5%, #10359A 90%) ; */
+        background: linear-gradient(to bottom, #1deef7, #10359A); }
         #sidebarnav {
         background: #071845; }
         .sidebar-nav ul li a.active, .sidebar-nav ul li a:hover {

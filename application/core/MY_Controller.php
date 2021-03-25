@@ -14,6 +14,26 @@ class MY_Controller extends MX_Controller {
 		// 		redirect(base_url('login'));
 		// 	}
 		// }
+
+		// if ($route == 'login') {
+		// 	if ($this->session->has_userdata('logged_in')) {
+		// 		if ($this->session->userdata('user_type') != "User") {
+		// 			redirect(base_url("dashboard"));
+		// 		} else {
+		// 			redirect(base_url("books"));
+		// 		}
+		// 	}
+		// } else {
+		// 	if (!$this->session->has_userdata('logged_in') && $route != 'register') {
+		// 		redirect(base_url('login'));
+		// 	} else {
+		// 		if ($route == "Admin" && $this->session->userdata('user_type')  == "User") {
+		// 			redirect(base_url("books"));
+		// 		} else if ($route == "User" && $this->session->userdata('user_type')  == "Admin") {
+		// 			redirect(base_url("dashboard"));
+		// 		}
+		// 	}
+		// }
 	}
 
 	public function load_page($page, $data = array(), $footer){
