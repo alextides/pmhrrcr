@@ -1,6 +1,8 @@
 
-
-   <script src="<?=base_url()?>assets/module/jquery/jquery.min.js"></script>
+    <script>
+        const base_url = '<?= base_url(); ?>';
+    </script>
+    <script src="<?=base_url()?>assets/module/jquery/jquery.min.js"></script>
    <!-- Bootstrap popper Core JavaScript -->
    <script src="<?=base_url()?>assets/module/bootstrap/js/popper.min.js"></script>
    <script src="<?=base_url()?>assets/module/bootstrap/js/bootstrap.min.js"></script>
