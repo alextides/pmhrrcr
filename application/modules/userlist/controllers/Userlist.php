@@ -150,24 +150,27 @@ class Userlist extends MY_Controller
     public function update_users()
 	{
 		$post = $this->input->post();
-			if ($post) {
+			if(!empty($post)) {
 				$set = array(
-                    'username' => $post["username"],
-					'email' => $post["email"],
+                    
+					"first_name" => $post["first_name"],
+					"last_name" => $post["last_name"],
+					"phone_number" => $post["phone_number"],
+					"city" => $post["city"],
+					"state" => $post["state"],
+					"country" => $post["country"],
+					"zip_code" => $post["zip_code"],
+					
 				);
-                $where = array("user_id" => $post["user_id"]);
-                $res = $this->MY_Model->update("bpmhsl_users", $set);
-				if ($res) {
+				$where = array("fk_user_id" => $post["fk_user_id"]);
+				$res = $this->MY_Model->update("bpmhsl_user_details", $set, $where);
+				if($res) {
 					$set = array(
-                        "first_name" => $post["first_name"],
-                        "last_name" => $post["last_name"],
-                        "phone_number" => $post["phone_number"],
-                        "city" => $post["city"],
-                        "state" => $post["state"],
-                        "zip_code" => $post["zip_code"],
+						'username' => $post["username"],
+						'email' => $post["email"],
 					);
-                    $where = array("user_details_id" => $post["user_details_id"]);
-                    $res = $this->MY_Model->update("bpmhsl_user_details", $set, $where);
+					$where = array("user_id" => $post["user_id"]);
+					$res = $this->MY_Model->update("bpmhsl_users", $set, $where);
 					if ($res) {
 						$this->errmsg = "";
 						$resmsg = array("err" => false, "msg" => "Updated Successfully!");

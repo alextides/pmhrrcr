@@ -131,7 +131,7 @@
             </button>
          </div>
          <div class="modal-body">
-         <input type="hidden" class="form-control" id="user_details_id" name="user_details_id">
+         <input type="hidden" class="form-control" id="fk_user_id" name="fk_user_id">
          <input type="hidden" class="form-control" id="user_id" name="user_id">
             <div class="modal-body">
                <div class="form-group">

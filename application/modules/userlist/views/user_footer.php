@@ -35,6 +35,8 @@
             url: base_url + user_details_id,
             success: function(data) {
                 let result = JSON.parse(data);
+                $('[name="user_id"]').val(result[0].user_id);
+                $('[name="fk_user_id"]').val(result[0].fk_user_id);
                 $('[name="first_name"]').val(result[0].first_name);
                 $('[name="last_name"]').val(result[0].last_name);
                 $('[name="username"]').val(result[0].username);
