@@ -107,7 +107,7 @@ class Userlist extends MY_Controller
 		foreach ($userlist->result() as $tm) {
 			$action_btn = "";
             $action_btn .= "<a class='btn btn-xs edit-users' user-id=".$tm->user_details_id." data-toggle='tooltip' data-placement='bottom' title='Update'  data-toggle='modal' data-target='#UpdateUsers' href=''><i class='fa fa-edit'></i></a>";
-			$action_btn .= "<a class='btn btn-xs delete-users' user-id=".$tm->user_details_id." data-toggle='tooltip' data-placement='bottom' title='Delete' href=''><i class='fa fa-trash'></i></a>";
+			$action_btn .= "<a class='btn btn-xs delete-users' user-id=".$tm->user_details_id." data-toggle='tooltip' data-placement='bottom' title='Delete' href=".base_url('userlist/delete_users/'.$tm->user_id)."><i class='fa fa-trash'></i></a>";
 
 			$data[] = array(
                 $tm->user_details_id,
@@ -150,7 +150,7 @@ class Userlist extends MY_Controller
     public function update_users()
 	{
 		$post = $this->input->post();
-			if(!empty($post)) {
+			if($post){
 				$set = array(
                     
 					"first_name" => $post["first_name"],
@@ -163,27 +163,27 @@ class Userlist extends MY_Controller
 					
 				);
 				$where = array("fk_user_id" => $post["fk_user_id"]);
-				$res = $this->MY_Model->update("bpmhsl_user_details", $set, $where);
-				if($res) {
+				$update = $this->MY_Model->update("bpmhsl_user_details", $set, $where);
+				if($update) {
 					$set = array(
 						'username' => $post["username"],
 						'email' => $post["email"],
 					);
 					$where = array("user_id" => $post["user_id"]);
-					$res = $this->MY_Model->update("bpmhsl_users", $set, $where);
-					if ($res) {
-						$this->errmsg = "";
-						$resmsg = array("err" => false, "msg" => "Updated Successfully!");
-						$this->session->set_flashdata('res_err', $resmsg);
-					} else {
-						$resmsg = array("err" => true, "msg" => "Updating user failed!");
-						$this->session->set_flashdata('res_err', $resmsg);
-					}
+					$update = $this->MY_Model->update("bpmhsl_users", $set, $where);
+					$this->session->set_userdata('swal', 'Updated Successfully.');
 				}
 			}
 		
 		redirect(base_url("userlist/userlist"));
 	}
-
-   
+	
+	public function delete_users($user_id)
+	{
+		$set = array("user_status" => 1);
+		$where = array("user_id" => $id="$user_id");
+		$res = $this->MY_Model->update("bpmhsl_users", $set, $where);
+		$this->session->set_userdata('swal','User deleted successfully.');
+		redirect(base_url("userlist/userlist"));
+	}
 }
