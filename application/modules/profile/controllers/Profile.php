@@ -16,9 +16,17 @@ class Profile extends MY_Controller
 		
 		$data["title"] = "Profile | BRK Psychiatric Mental Health Services LLC";
 		$data["pagename"] = "Profile";
+		$data['user_prof'] = $this->get_users_info();
 		$this->load_page2("profile", $data);
 	}
-
+	public function get_users_info() {
+		$fk_user_id = $this->session->userdata('user_details')[0]['user_id']; //mao ni ang session master kung kinsa nga user ni login
+		$param["select"] = "*";
+		$param["where"] = array("user_id" => $fk_user_id);
+		$param["join"] = array("bpmhsl_user_details" => "bpmhsl_user_details.user_details_id = bpmhsl_users.user_id");
+		$res = $this->MY_Model->getRows("bpmhsl_users", $param);
+		return $res;
+	}
 	public function update_users()
 	{
 		$post = $this->input->post();
@@ -47,6 +55,9 @@ class Profile extends MY_Controller
 				}
 			}
 		
-		redirect(base_url("userlist/userlist"));
+		redirect(base_url("profile/profile"));
 	}
+	
+
+	
 }

@@ -21,9 +21,9 @@
                     <div class="dropdown-menu dropdown-menu-right animated flipInY">
                         <ul class="dropdown-user">
                             <?php if ($this->session->userdata('user_details')[0]['user_type'] != "user") { ?>
-                                <?php echo "<li><a href='" . base_url("update/profile") . "'></i> Profile </a></li>"; ?>
+                                <?php echo "<li><a href='" . base_url("profile/profile") . "'></i> Profile </a></li>"; ?>
                             <?php } else { ?>
-                                <?php echo "<li><a href='" . base_url("update/profile") . "'></i> Profile </a></li>"; ?>
+                                <?php echo "<li><a href='" . base_url("profile/profile") . "'></i> Profile </a></li>"; ?>
                             <?php } ?>
                             <li><a href="<?= base_url("logout") ?>"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
@@ -52,8 +52,8 @@
                                     echo "not-active";
                                 }  ?>">
                         <a class="waves-effect " href="<?= base_url("dashboard") ?>" aria-expanded="false"><i class="icon-Car-Wheel"></i><span class="hide-menu">Dashboard </span></a>
-                    <li> <a class="waves-effect " href="<?= base_url("userlist") ?>" aria-expanded="false"><i class="icon-File"></i><span class="hide-menu">Manage Users</span></a></li>
-                    <li> <a class="waves-effect " href="<?= base_url("training_materials") ?>" aria-expanded="false"><i class="icon-File"></i><span class="hide-menu">Training Materials</span></a></li>
+                    <li> <a class="waves-effect " href="<?= base_url("userlist") ?>" aria-expanded="false"><i class="icon-User"></i><span class="hide-menu">Manage Users</span></a></li>
+                    <li> <a class="waves-effect " href="<?= base_url("training_materials") ?>" aria-expanded="false"><i class="icon-Files"></i><span class="hide-menu">Training Materials</span></a></li>
                     </li>
                 </ul>
             <?php } else { ?>
@@ -63,7 +63,8 @@
                                 } else {
                                     echo "not-active";
                                 }  ?>">
-                        <a class="waves-effect " href="<?= base_url("dashboard") ?>" aria-expanded="false"><i class="icon-Car-Wheel"></i><span class="hide-menu">Dashboard </span></a>
+                        <a class="waves-effect " href="<?= base_url("") ?>" aria-expanded="false"><i class="icon-Car-Wheel"></i><span class="hide-menu">Dashboard </span></a>
+                        <a class="waves-effect " href="<?= base_url("training_materials") ?>" aria-expanded="false"><i class="icon-Files"></i><span class="hide-menu">Training Materials </span></a>
                     </li>
                 </ul>
             <?php } ?>
