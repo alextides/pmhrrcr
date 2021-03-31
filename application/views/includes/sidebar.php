@@ -63,7 +63,11 @@
                                 } else {
                                     echo "not-active";
                                 }  ?>">
+<<<<<<< Updated upstream
                         <a class="waves-effect " href="<?= base_url("dashboard") ?>" aria-expanded="false"><i class="icon-Car-Wheel"></i><span class="hide-menu">Dashboard </span></a>
+=======
+                        <a class="waves-effect " href="<?= base_url("") ?>" aria-expanded="false"><i class="icon-Car-Wheel"></i><span class="hide-menu">Dashboard </span></a>
+>>>>>>> Stashed changes
                         <a class="waves-effect " href="<?= base_url("training_materials") ?>" aria-expanded="false"><i class="icon-Files"></i><span class="hide-menu">Training Materials </span></a>
                     </li>
                 </ul>

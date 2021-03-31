@@ -81,4 +81,47 @@ class MY_Controller extends MX_Controller {
 		$this->session->set_flashdata('swals', $load);
 	}
 
+	public function sendmail($to_email = '', $from_name = '', $subject = '', $message = '', $use_html_template = true)
+	{
+		$this->load->library('email');
+
+		$config['protocol']    = 'smtp';
+		$config['smtp_host']    = 'secure.emailsrvr.com';
+		$config['smtp_port']    = '587';
+		$config['smtp_user']    = 'onlineform9@proweaver.net';
+		$config['_smtp_auth'] = TRUE;
+		$config['smtp_pass']    = 'Fq9wGprD%19*';
+		$config['smtp_crypto'] = 'tls';
+		$config['mailtype'] = 'html'; // or html
+		$config['charset'] = 'utf-8';
+		$config['wordwrap'] = TRUE;
+		$config['newline']  = "\r\n";
+
+		$this->email->initialize($config);
+		$this->email->set_newline("\r\n");
+
+		$this->email->from('onlineform@proweaver.net', $from_name);
+		$this->email->to($to_email);
+		$this->email->subject($subject);
+
+		if ($use_html_template) {
+			$messageData['title'] = $subject;
+			$messageData['content'] = $message;
+			$message = $this->load->view('mail_template', $messageData, true);
+			$this->email->message($message);
+		} else {
+			$this->email->message($message);
+		}
+
+		// $this->email->send();
+
+		if ($this->email->send()) {
+			return true;
+		} else {
+			echo $this->email->print_debugger();
+
+			return false;
+		}
+	}
+
 }

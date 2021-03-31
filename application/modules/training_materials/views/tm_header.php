@@ -152,4 +152,47 @@
       border: 1px solid #184fe7;
       font-size: 1px;
    }
+
+   .nav-item #training-m-tab {
+      border-top-left-radius: 20px !important;
+      border-bottom-left-radius: 20px !important;
+      border: 1px solid #10359A;
+      color: #10359A;
+   }
+
+   .nav-item #subscription-tab {
+      border-top-right-radius: 20px !important;
+      border-bottom-right-radius: 20px !important;
+      border: 1px solid #10359A;
+      color: #10359A;
+   }
+
+   .nav-pills .nav-link.active,
+   .nav-pills .show>.nav-link {
+      background: linear-gradient(to left, #0a205c, #10359A);
+      color: #fff !important;
+   }
+
+   #subs_training_materials_datatable thead,
+   #paid_training_materials_datatable thead,
+   #training_materials_datatable thead {
+      background: linear-gradient(to left, #0a205c, #10359A);
+      color: #fff;
+   }
+
+   #subs_training_materials_datatable,
+   #paid_training_materials_datatable,
+   #training_materials_datatable {
+      border-bottom: 1px solid #0a205c;
+   }
+
+   .pay-training {
+      background: #184fe7;
+      color: #fff;
+   }
+
+   .pay-training:hover {
+      background: #184fe7;
+      color: #fff;
+   }
 </style>

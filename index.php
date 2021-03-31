@@ -1,6 +1,88 @@
 <?php
 $isProduction = false;
 $base_url = (isset($_SERVER['HTTPS']) ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].'/'.(explode("/",$_SERVER['REQUEST_URI'])[1]).'/';
+define('TEST_MODE', true);
+define('COMPANY_NAME', 'BRK Psychiatric Mental Health Services LLC');
+define('FORM_NAME', 'Payment');
+
+define('DONATION', false);
+// test if e-mail functionality is working. If TEST_EMAIL = true, make sure $gateways are false
+define('TEST_EMAIL', false);
+
+if(DONATION){
+  	define('RECURRING', true);
+  	$donation_amounts = array(10,25,50,100,200);
+}elseif(TEST_EMAIL){
+   	sendtestemail();
+}else {
+  $payments = array(    );
+}
+
+$gateways = array(
+  	'paypal'    => true,
+  	'authorize' => false,
+  	'payeezy'   => false,
+  	'stripe'    => false,
+  	'square'    => false
+);
+
+$required = array('First_Name','Last_Name','Email');
+
+if(TEST_MODE){
+  //NOTE: PAYPAL
+  define("PAYPAL_USERNAME", "sp-facilitator_api1.proweaver.net");
+  define("PAYPAL_PASSWORD", "1399873650");
+  define("PAYPAL_SIGNATURE", "AiPC9BjkCyDFQXbSkoZcgqH3hpacA74rJq85b-pTFAHAZ.71hb30iH12");
+
+  //NOTE: AUTHORIZE.NET
+  define('AUTHORIZE_LOGINID','9r52BTU4dyJ');
+  define('AUTHORIZE_TKEY','83JU8Mjs7n2g8r4p');
+
+  //NOTE: PAYEEZY
+  define('PAYEEZY_GATEWAYID','PJ8599-42');
+  define('PAYEEZY_PASSWORD','NfuhB9IRbAkEdyN2uavBV5uH3TBviVaZ');
+  define('PAYEEZY_KEYID','557015');
+  define('PAYEEZY_HMACKEY','OHicnLnzcRcMTAdkhMv27KJVwYT8m3DO');
+
+  //NOTE: STRIPE
+  define('STRIPE_PUBLISHABLE_KEY','pk_test_Y2XsAOSNSABe2aOW2Y4s1B0x');
+  define('STRIPE_SECRET_KEY','sk_test_O2dUx2u1rnMoIEAbjo1fxhzJ');
+
+	//NOTE: SQUARE
+	//   define('SQUARE_APPLICATION_ID','sandbox-sq0idp-Cv-UCD-d58VKczDvd8PXog');
+	//   define('SQUARE_ACCESS_TOKEN','sandbox-sq0atb-s3f9nBf4GmWjTLcRoEm9aw');
+	//   define('SQUARE_LOCATION_ID','CBASEICWWAw5k2TCC_Ez-1bJueUgAQ');
+	define('SQUARE_APPLICATION_ID', 'sandbox-sq0idb-K8zNYb-vAxSgEd7obKjwHw');
+	define('SQUARE_ACCESS_TOKEN', 'EAAAEEz93JojYdioVzkPIp_g3c-TwibkA4MrZPqKyQdlwJCh0bK-V2iJqRX7n3hY');
+	define('SQUARE_LOCATION_ID', 'LCX65EX6Q46H2');
+
+}else {
+
+  //NOTE: PAYPAL
+  define('PAYPAL_USERNAME','');
+  define('PAYPAL_PASSWORD','');
+  define('PAYPAL_SIGNATURE','');
+
+
+  //NOTE: AUTHORIZE.NET
+  define('AUTHORIZE_LOGINID','');
+  define('AUTHORIZE_TKEY','');
+
+  //NOTE: PAYEEZY
+  define('PAYEEZY_GATEWAYID','');
+  define('PAYEEZY_PASSWORD','');
+  define('PAYEEZY_KEYID','');
+  define('PAYEEZY_HMACKEY','');
+
+  //NOTE: STRIPE
+  define('STRIPE_PUBLISHABLE_KEY','');
+  define('STRIPE_SECRET_KEY','');
+
+  //NOTE: SQUARE
+  define('SQUARE_APPLICATION_ID','');
+  define('SQUARE_ACCESS_TOKEN','');
+  define('SQUARE_LOCATION_ID','');
+}
 /**
  * CodeIgniter
  *
