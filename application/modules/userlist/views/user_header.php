@@ -23,6 +23,72 @@
    }
 
    .modal-header {
-      background: #bdc2bc;
+      background: linear-gradient(to right, #10359A, #10359A);
    }
+   .modal-header #AddUserModalTitle,
+   #AddUserModal
+   {
+      color: #fff;
+   }
+   .atm-button {
+      background: linear-gradient(to left, #0a205c, #10359A);
+      border: 1px solid;
+      border-radius: 30px;
+      color: #fff;
+   }
+
+   .atm-button:hover {
+      background: linear-gradient(to left, #0a205c, #10359A);
+      border: 1px solid;
+      color: #fff;
+   }
+   .atm-submit,
+   .view-atm-close {
+      background: linear-gradient(to right, #0a205c, #10359A);
+      color: #fff;
+   }
+
+   .atm-submit:hover,
+   .view-atm-close:hover {
+      background: linear-gradient(to right, #0a205c, #10359A);
+      color: #fff;
+   }
+
+   .atm-close {
+      background: #1deef7;
+      color: #fff;
+   }
+
+   .atm-close:hover {
+      background: #1deef7;
+      color: #fff;
+   }
+   #adduser input,
+   #adduser textarea {
+      border: 1px solid #184fe7;
+      padding: 4px;
+   }
+
+   #adduser label {
+      color: #000;
+      font-weight: 500;
+   }
+   #update_users input,
+   #update_users textarea {
+      border: 1px solid #184fe7;
+      padding: 4px;
+   }
+
+   #update_users label {
+      color: #000;
+      font-weight: 500;
+   }
+   .modal-header #UpdateUsersTitle,
+   #UpdateUsers
+   {
+      color: #fff;
+   }
+   
+   
+
 </style>

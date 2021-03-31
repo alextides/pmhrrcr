@@ -1,3 +1,11 @@
+<style>
+.btn {
+   margin-left: 880px;
+
+}
+
+</style>
+
 <div class="page-wrapper">
 <div class="container-fluid">
 <div class="row page-titles">
@@ -9,7 +17,7 @@
 <div class="col-md-12">
    <div class="card">
       <div class="card-body">
-       <form method="post" id="update_users" action="<?=base_url();?>update/update_users">
+       <form method="post" id="update_users" action="<?=base_url();?>profile/update_users">
          <div class="form-row">
             <body>
                <input type="hidden" class="form-control" id="fk_user_id" name="fk_user_id" value="<?php echo $user_prof[0]['fk_user_id']; ?>">
@@ -18,7 +26,7 @@
                   <div class="row">
                      <div class="col-md-4">
                         <div class="form-group">
-                           <label>First Name</label>
+                           <label >First Name</label>
                            <input id="first_name" class="form-control" type="text"  name="first_name" value="<?php echo $user_prof[0]['first_name']; ?>" required/>
                         </div>
                      </div>
@@ -75,7 +83,7 @@
                         </div>
                      </div>
                      <div class="col-md-12">
-                        <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Update</button>
+                        <button type="submit" class="btn atm-button"><i class="fa fa-check"></i> Save Changes</button>
                      </div>
                   </div>
             </body>

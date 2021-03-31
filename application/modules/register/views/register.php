@@ -59,32 +59,32 @@
                             <label for="email_address">Email Address</label>
                             <input type="email" class="form-control" id="email" name="email" required>
                         </div>
-                    </div>
-                    <div class="form-group ">
                         <div class="col-md-12 mb-3">
                             <label for="username">Username</label>
                             <input type="text" class="form-control" id="username" name="username" value="" required>
                         </div>
+                    </div>
+                    <div class="form-group ">
                         <div class="col-md-12 mb-3">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" name="password" value="" required>
                         </div>
-                    </div>
-                    <div class="form-group ">
                         <div class="col-md-12 mb-3">
                             <label for="phone_number">Phone</label>
                             <input type="number" class="form-control" id="phone_number" name="phone_number" required>
                         </div>
+                    </div>
+                    <div class="form-group ">
                         <div class="col-md-12 mb-3">
                             <label for="city">City</label>
                             <input type="text" class="form-control" id="city" name="city" required>
                         </div>
-                    </div>
-                    <div class="form-group ">
                         <div class="col-md-12 mb-3">
                             <label for="state">State</label>
                             <input type="text" class="form-control" id="state" name="state" required>
                         </div>
+                    </div>
+                    <div class="form-group ">
                         <div class="col-md-12 mb-3">
                             <label for="country">Country</label>
                             <input type="text" class="form-control" id="country" name="country" required>
@@ -96,7 +96,7 @@
                     </div>
                     <div class="form-group text-center ">
                         <div class="col-xs-12 p-b-20 " style="margin-top:20px;">
-                            <button class="btn btn-primary" type="submit">Register</button>
+                            <button class="login-btn" type="submit">Register</button>
                         </div>
                     </div>
                     <div class="form-group m-b-0">

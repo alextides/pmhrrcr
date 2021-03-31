@@ -1,3 +1,4 @@
+
 <div class="page-wrapper" id="">
     <div class="container-fluid">
         <div class="row page-titles">
@@ -5,7 +6,7 @@
                 <h3 class="text-themecolor page-title-text">Manage Users</h3>
             </div>
             <div class="col-md-7 align-self-center text-right">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adduser"><i class="fa fa-plus-circle"></i> Add Users </button>
+            <button type="button" class="btn atm-button" data-toggle="modal" data-target="#AddUserModal"><i class="fa fa-plus-circle"></i> Add Users </button>
             </div>
         </div>
         <div class="row">
@@ -42,15 +43,17 @@
     </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="adduser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="AddUserModal" tabindex="-1" role="dialog" aria-labelledby="AddUserModalTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form class="form-horizontal form-material" id="adduser" method="post" action="<?= base_url("userlist/adduser"); ?>">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel"><i class="icon-User"></i> Add User</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="AddUserModalTitle"><i class="icon-User"></i> Add User</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
                 </div>            
                     <div class="modal-body">
+                    <form class="form-horizontal form-material" id="adduser" method="post" action="<?= base_url("userlist/adduser"); ?>">
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-6">
@@ -113,8 +116,8 @@
                         </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button class="btn btn-primary" type="submit">Save changes</button>
+                    <button type="button" class="btn atm-close" data-dismiss="modal">Close</button>
+                    <button class="btn atm-button" type="submit"><i class="fa fa-plus-circle"></i> Save User</button>
                 </div>
             </form>
         </div>
@@ -124,13 +127,13 @@
 <div class="modal fade" id="UpdateUsers" tabindex="-1" role="dialog" aria-labelledby="UpdateUsersTitle" aria-hidden="true">
 <div class="modal-dialog modal-dialog-scrollable" role="document">
    <div class="modal-content">
-      <form method="post" enctype="multipart/form-data" action="<?= base_url("userlist/update_users"); ?>" id="update_users">
          <div class="modal-header">
-            <h4 class="modal-title" id="UpdateUsersLabel"><i class="icon-User"></i> Update User</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            </button>
+            <h4 class="modal-title" id="UpdateUsersTitle"><i class="icon-User"></i> Update User</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
          </div>
          <div class="modal-body">
+         <form method="post" enctype="multipart/form-data" action="<?= base_url("userlist/update_users"); ?>" id="update_users">
          <input type="hidden" class="form-control" id="fk_user_id" name="fk_user_id">
          <input type="hidden" class="form-control" id="user_id" name="user_id">
             <div class="modal-body">
@@ -193,7 +196,7 @@
             </div>
             <div class="modal-footer">
                <button type="button" class="btn atm-close" data-dismiss="modal">Close</button>
-               <button type="submit" class="btn atm-submit"><i class="fa fa-check-circle"></i> Update User</button>
+               <button type="submit" class="btn atm-button"><i class="fa fa-check-circle"></i> Update User</button>
             </div>
          </div>
       </form>
