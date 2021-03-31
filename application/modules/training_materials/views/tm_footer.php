@@ -169,4 +169,36 @@
         var base_url = "<?php echo base_url(); ?>payment/subscription/" + training_id;
         window.open(base_url, '_blank');
     })
+
+    //  View Training Materials Users 
+    $(document).on('click', '.view-trainingmaterials', function(e) {
+        e.preventDefault();
+
+        var training_id = $(this).attr('training-id');
+        $('#view_training_id').val(training_id);
+
+        let new_array = [];
+        let checker = '';
+
+        var base_url = "<?php echo base_url(); ?>training_materials/get_training/";
+        $.ajax({
+            type: "GET",
+            url: base_url + training_id,
+            success: function(data) {
+                let result = JSON.parse(data);
+                $('[name="view_book_name"]').val(result[0].book_name);
+                // $('[name="view_book_image"]').val(result[0].book_image);
+                $('[name="view_subs_price"]').val(result[0].subscription_price);
+
+                var book = '<?php echo base_url(); ?>assets/uploads/files/' + result[0].book_image;
+                $("#view_book_image").attr("src", book);
+
+                $('#UserTraining').modal('show');
+            },
+            error: function(data) {
+                alert(data);
+            }
+        });
+    });
+
 </script>

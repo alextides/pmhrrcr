@@ -548,4 +548,22 @@ class Training_materials extends MY_Controller
 		echo json_encode($output);
 		exit();
 	}
+
+	public function download($training_id = NULL) {   
+		if ($training_id) {
+		 $file = realpath ( "download" ) . "\\" . $training_id;
+		 // check file exists    
+		 if (file_exists ( $file )) {
+		  // get file content
+		  $data = file_get_contents ( $file );
+		  //force download
+		  force_download ( $training_id, $data );
+		 } else {
+		  // Redirect to base url
+		  redirect ( base_url () );
+		 }
+		}
+	 }
+
 }
+

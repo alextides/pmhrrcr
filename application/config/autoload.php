@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $this->load->helper('string');
 $this->load->helper('url');
+$this->load->helper('download');
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER
@@ -93,7 +94,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('html','url','file','form','global');
+$autoload['helper'] = array('html','url','file','form','global','download');
 
 /*
 | -------------------------------------------------------------------

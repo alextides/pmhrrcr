@@ -140,4 +140,8 @@ class MY_Model extends CI_Model {
         $this->db->delete($table);
         return true;
     }
+    public function download($id){
+        $this->db->where('bpmhsl_training_materials',array('id'=>$id));
+        return true;
+    }
 }

@@ -88,6 +88,29 @@
    {
       color: #fff;
    }
+   #user_datatable thead {
+      background: linear-gradient(to left, #0a205c, #10359A);
+      color: #fff;
+   }
+
+   #user_datatable {
+      border-bottom: 1px solid #0a205c;
+   }
+   .edit-users,
+   .delete-users
+  {
+      background: linear-gradient(to right, #0a205c, #10359A);
+      color: #fff;
+      border-radius: 100%;
+   }
+
+   .edit-users:hover,
+   .delete-users:hover
+   {
+      background: linear-gradient(to right, #0a205c, #10359A);
+      color: #fff;
+      border-radius: 100%;
+   }
    
    
 

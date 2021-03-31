@@ -304,3 +304,52 @@
         </div>
     </div>
 </div>
+<!-- User Modal - View Training Material -->
+<div class="modal fade" id="UserTraining" tabindex="-1" role="dialog" aria-labelledby="UserTrainingModalTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-scrollable" role="document">
+<div class="modal-content">
+   <div class="modal-header">
+      <h5 class="modal-title" id="UserTrainingModalTitle">View Training Material</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+   <div class="modal-body">
+      <form method="post" id="view_trainingmaterials">
+         <input type="hidden" class="form-control" id="view_training_id" name="view_training_id">
+         <div class="form-body">
+            <div class="card-body">
+               <div class="row">
+                  <div class="form-group col-md-12">
+                     <input type="text" class="form-control form-control-plaintext" id="view_book_name" name="view_book_name" disabled>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="form-group col-md-12">
+                     <div class="book-img">
+                        <img src="" id="view_book_image" name="view_book_image">
+                     </div>
+                  </div>
+                  <div class="input-group mb-3">
+                     <div class="input-group-prepend subs-div">
+                        <span class="input-group-text subs-span">Subscription Price: $</span>
+                     </div>
+                     <input type="text" class="form-control " id="view_subs_price" name="view_subs_price" aria-label="Amount (to the nearest dollar)" disabled>
+                  </div>
+                  <div class="input-group mb-3">
+                     <div class="input-group-prepend subs-div">
+                        <span class="input-group-text subs-span"><a href="<?=base_url ()?>training_details/download/" download id="files">Download File</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <div class="input-group-append">
+                  <button type="button" class="btn view-atm-close" data-dismiss="modal">Close</button>
+               </div>
+            </div>
+      </form>
+      </div>
+   </div>
+</div>
+
