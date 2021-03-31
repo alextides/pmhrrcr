@@ -150,5 +150,6 @@
 
    .book-div {
       border: 1px solid #184fe7;
+      font-size: 1px;
    }
 </style>
