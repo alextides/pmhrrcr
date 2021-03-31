@@ -39,8 +39,8 @@ class Register extends MY_Controller {
             );
                 $this->MY_Model->insert('bpmhsl_user_details', $user_data);
                 $this->session->set_userdata('swal', 'Added successfully.');
-                redirect(base_url("register"));
+                
             }
-
+            redirect(base_url("register/register"));
 	}
 }

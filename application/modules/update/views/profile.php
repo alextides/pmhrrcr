@@ -9,7 +9,7 @@
 <div class="col-md-12">
    <div class="card">
       <div class="card-body">
-       <form method="post" id="update_user" action="<?=base_url();?>profile/update_users">
+       <form method="post" id="update_users" action="<?=base_url();?>update/update_users">
          <div class="form-row">
             <body>
                <input type="hidden" class="form-control" id="fk_user_id" name="fk_user_id" value="<?php echo $user_prof[0]['fk_user_id']; ?>">

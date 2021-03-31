@@ -55,7 +55,7 @@ class Profile extends MY_Controller
 				}
 			}
 		
-		redirect(base_url("profile/profile"));
+		redirect(base_url("update/profile"));
 	}
 	
 
