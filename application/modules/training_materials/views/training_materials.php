@@ -315,7 +315,7 @@
       </button>
    </div>
    <div class="modal-body">
-      <form method="post" id="view_trainingmaterials">
+      <form method="post" id="view_trainingmaterials" action="<?= base_url("training_materials/download"); ?>">
          <input type="hidden" class="form-control" id="view_training_id" name="view_training_id">
          <div class="form-body">
             <div class="card-body">
@@ -338,7 +338,7 @@
                   </div>
                   <div class="input-group mb-3">
                      <div class="input-group-prepend subs-div">
-                        <span class="input-group-text subs-span"><a href="<?=base_url ()?>training_details/download/" download id="files">Download File</span>
+                        <span class="input-group-text subs-span"><a href="<?= base_url("training_materials/download"); ?>">Download File</span>
                      </div>
                   </div>
                </div>

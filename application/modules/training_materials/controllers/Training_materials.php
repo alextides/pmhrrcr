@@ -74,10 +74,12 @@ class Training_materials extends MY_Controller
 		
 		$this->load->library('CKEditor');
 		$this->load->library('CKFinder');
+		$this->load->helper('url', 'download');
 		$this->ckfinder->SetupCKEditor($this->ckeditor, '../../assets/ckfinder/');
 
 		// $data['materials'] = array('Clean House', 'Call Mom', 'Run Errands');
 		$data['materials'] = $this->get_materials();
+		
 		$this->load_page2('training_materials', $data, "tm_footer.php", "tm_header.php");
 	}
 
@@ -549,21 +551,24 @@ class Training_materials extends MY_Controller
 		exit();
 	}
 
-	public function download($training_id = NULL) {   
-		if ($training_id) {
-		 $file = realpath ( "download" ) . "\\" . $training_id;
-		 // check file exists    
-		 if (file_exists ( $file )) {
-		  // get file content
-		  $data = file_get_contents ( $file );
-		  //force download
-		  force_download ( $training_id, $data );
-		 } else {
-		  // Redirect to base url
-		  redirect ( base_url () );
-		 }
-		}
-	 }
+	public function download()
+	{
+		
+		$this->load->helper('url', 'download');
+		$data[] = array(
+			$book_image,
+			$files
+		);
+		$filename = '../assets/uploads/files/'.$data;
+		// $name = 'files.docx';
+		force_download($filename, NULL);
+		echo '<pre>';
+		print_r($data);
+		exit;
+		
+		
+	}
+
 
 }
 
